@@ -1,7 +1,11 @@
 # mi_robotica/servos.py
 import time
-from gpiozero import AngularServo
+from gpiozero import AngularServo, Device
+from gpiozero.pins.lgpio import LGPIOFactory
 from gpiozero.exc import GPIOPinInUse
+
+# Forzar a gpiozero a usar el driver nativo de la Raspberry Pi 5
+Device.pin_factory = LGPIOFactory()
 
 class ControladorServo:
     def __init__(self, pin_gpio, angulo_min=0, angulo_max=180, min_pulso=0.5/1000, max_pulso=2.5/1000):
