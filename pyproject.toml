@@ -18,5 +18,7 @@ classifiers = [
 
 dependencies = [
     "gpiozero",
-    "pigpio"
+    "pigpio",
+    "rpi-lgpio",
+    "lgpio"
 ]
